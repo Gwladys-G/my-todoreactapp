@@ -34,3 +34,11 @@ export default function App() {
     </main>
   );
 }
+
+
+//clear to dos function
+//toggle todos function
+//number of todos left
+//connect to bored API
+//click to get ideas and ability to add to list
+//load and save to localstorage?
