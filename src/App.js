@@ -64,6 +64,13 @@ export default class App extends Component {
     }))
   }
 
+  handleDelete = (id) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      allTasks: prevState.allTasks.filter((task) => task.id !== id)
+    }))
+
+  }
 
   render(){
     return (
@@ -80,6 +87,7 @@ export default class App extends Component {
         <TaskList
           allTasks={this.state.allTasks}
           markAsCompleted={this.markAsCompleted}
+          handleDelete={this.handleDelete}
         />
       </div>
     )

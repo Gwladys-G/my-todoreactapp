@@ -39,9 +39,7 @@ form button{
   padding: 5px;
 }
 
-form .status{
-  color: red
-}
+
 
 ul {
   list-style: none;
@@ -60,14 +58,12 @@ li {
 }
 
 
-li div {
-  position: relative;
+li .actions {
+  display: flex;
+  justify-content: space-between;
 }
 
 li div button {
-  position: absolute;
-  top: 0;
-  right: 0;
   background-color: transparent;
   border: 0;
   padding: 10px;
@@ -88,24 +84,5 @@ li h2 {
 }
 
 li p {
-  margin: 8px;
+  margin: 0px;
 }
-
-/* li h2 {
-  background-color: #7798AB;
-  margin: 0;
-  padding: 4px;
-}
-
-li p {
-  margin: 8px;
-}
-
-
-  li {
-    text-decoration: line-through;
-    background-color: #3A4F41;
-    border: 1px solid #406a81;
-    border-radius: 5px 2px;
-    margin: 8px 0;
-  } */
