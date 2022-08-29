@@ -1,38 +1,49 @@
-import React, { useState } from "react";
-import NewTask from "./NewTask";
-import TasksList from "./TasksLists";
+import { Component } from "react";
+import NewTask from "./NewTask"
 
-export default function App() {
-  const [newTask, setNewTask] = useState({});
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setNewTask((prev) => ({ ...prev, id: Date.now(), [name]: value }));
-  };
+export default class App extends Component {
 
-  const [allTasks, setAllTasks] = useState([]);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (!newTask.title) return;
-    setAllTasks((prev) => [newTask, ...prev]);
-    setNewTask({});
-  };
-  const handleDelete = (taskIdToRemove) => {
-    setAllTasks((prev) => prev.filter(
-      (task) => task.id !== taskIdToRemove
-    ));
-  };
+  constructor(props){
+    super(props);
+    this.state = {
+      newTask: {},
+      allTasks: []
+    };
+  }
 
-  return (
-    <main>
-      <h1>Tasks</h1>
-      <NewTask
-        newTask={newTask}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      <TasksList allTasks={allTasks} handleDelete={handleDelete} />
-    </main>
-  );
+  handleChange = (e) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      newTask: {
+        ...prevState.newTask,
+        [e.target.name]: e.target.value,
+        id: Date.now()
+      }
+    }));
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(this.state.allTasks);
+    this.setState((prevState) => ({
+      allTasks: [...prevState.allTasks, prevState.newTask],
+      newTask: {}
+    }));
+    console.log(this.state.allTasks);
+  }
+
+
+  render(){
+    return (
+      <div>
+        <h1>Tasks</h1>
+        <NewTask
+        newTask={this.state.newTask}
+        handleChange={this.handleChange}
+        handleSubmit={this.handleSubmit}/>
+      </div>
+    )
+  };
 }
 
 
