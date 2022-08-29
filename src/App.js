@@ -2,15 +2,31 @@ import { Component } from "react";
 import NewTask from "./NewTask"
 import TaskList from "./TaskList"
 
+const LOCAL_STORAGE_KEY= 'todoApp.todos'
+
 export default class App extends Component {
 
   constructor(props){
     super(props);
+    const storedTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     this.state = {
       newTask: {},
-      allTasks: [],
-      completedTasks: []
+      allTasks: storedTasks? storedTasks : [],
     };
+  }
+
+
+  saveTasks = () => {
+    console.log("savviiing");
+    localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(this.state.allTasks))
+  }
+
+  clearAll = () => {
+    window.localStorage.removeItem(LOCAL_STORAGE_KEY);
+    this.setState((prevState) => ({
+      allTasks: [],
+      newTask: {}
+    }));
   }
 
   handleChange = (e) => {
@@ -53,6 +69,9 @@ export default class App extends Component {
     return (
       <div>
         <h1>Tasks</h1>
+        <button onClick={this.saveTasks}>Save Progress</button>
+        <button onClick={this.clearAll}>Clear All</button>
+        {/* <button onClick={this.loadData}>getmypastwork</button> */}
         <NewTask
           newTask={this.state.newTask}
           handleChange={this.handleChange}
