@@ -7,7 +7,7 @@ export default class NewTask extends Component{
       <input
         name="title"
         placeholder="New Task title"
-        value={this.props.newTask.title || ""}
+        value={this.props.newTask.title || this.props.activity || ""}
         onChange={this.props.handleChange}
       />
       {!this.props.newTask.title? null : (

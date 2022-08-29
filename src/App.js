@@ -2,6 +2,7 @@ import { Component } from "react";
 import NewTask from "./NewTask"
 import TaskList from "./TaskList"
 import Settings from "./Settings";
+import BoredAPI from "./BoredAPI"
 
 const LOCAL_STORAGE_KEY= 'todoApp.todos'
 
@@ -13,9 +14,11 @@ export default class App extends Component {
     this.state = {
       newTask: {},
       allTasks: storedTasks? storedTasks : [],
+      error: null,
+      isLoaded: false,
+      idea: "",
     };
   }
-
 
   saveTasks = () => {
     localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(this.state.allTasks))
@@ -41,6 +44,7 @@ export default class App extends Component {
       }
     }));
   }
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -82,15 +86,55 @@ export default class App extends Component {
     }))
   }
 
+  GetActivity = () => {
+    fetch("http://www.boredapi.com/api/activity/")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          document.getElementById("APIform").classList.remove("hide")
+          this.setState((prevState) => ({
+            ...prevState,
+            isLoaded: true,
+            idea: result.activity
+          }));
+        },
+        (error) => {
+          this.setState((prevState) => ({
+            ...prevState,
+            isLoaded: true,
+            error
+          }));
+        }
+      )
+  }
+
+  AddActivity = (e) => {
+    e.preventDefault()
+    this.setState((prevState) => ({
+      ...prevState,
+      newTask: {
+        title: this.state.idea,
+        id: Date.now(),
+        createdAt: new Date().toDateString(),
+        completed: false
+      },
+      idea:""
+    })
+    )
+  document.getElementById("APIform").classList.add("hide")
+}
+
+
+
   render(){
     return (
       <div>
         <h1>Tasks</h1>
         <Settings
-        saveTasks={this.saveTasks}
-        clearAll={this.clearAll}
-        remainingTasks={this.remainingTasks}
-        clearAllDoneTasks={this.clearAllDoneTasks}
+          saveTasks={this.saveTasks}
+          clearAll={this.clearAll}
+          remainingTasks={this.remainingTasks}
+          clearAllDoneTasks={this.clearAllDoneTasks}
         />
         <NewTask
           newTask={this.state.newTask}
@@ -102,15 +146,13 @@ export default class App extends Component {
           markAsCompleted={this.markAsCompleted}
           handleDelete={this.handleDelete}
         />
+        <BoredAPI
+          GetActivity={this.GetActivity}
+          activity={this.state.idea}
+          AddActivity={this.AddActivity}
+          handleChange={this.handleChange}
+        />
       </div>
     )
   };
 }
-
-
-//clear to dos function
-//toggle todos function
-//number of todos left
-//connect to bored API
-//click to get ideas and ability to add to list
-//load and save to localstorage?

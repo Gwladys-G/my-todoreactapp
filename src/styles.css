@@ -86,3 +86,8 @@ li h2 {
 li p {
   margin: 0px;
 }
+
+
+.hide{
+  display: none;
+}
