@@ -1,6 +1,7 @@
 import { Component } from "react";
 import NewTask from "./NewTask"
 import TaskList from "./TaskList"
+import Settings from "./Settings";
 
 const LOCAL_STORAGE_KEY= 'todoApp.todos'
 
@@ -17,7 +18,6 @@ export default class App extends Component {
 
 
   saveTasks = () => {
-    console.log("savviiing");
     localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(this.state.allTasks))
   }
 
@@ -43,8 +43,8 @@ export default class App extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log(e.target)
     e.preventDefault();
+    if (!this.state.newTask.title) return;
     this.setState((prevState) => ({
       allTasks: [...prevState.allTasks, prevState.newTask],
       newTask: {}
@@ -69,16 +69,29 @@ export default class App extends Component {
       ...prevState,
       allTasks: prevState.allTasks.filter((task) => task.id !== id)
     }))
+  }
 
+  remainingTasks = () =>{
+    return this.state.allTasks.filter(task => !task.completed).length
+  }
+
+  clearAllDoneTasks = () => {
+    this.setState((prevState) => ({
+      ...prevState,
+      allTasks: prevState.allTasks.filter((task) => !task.completed)
+    }))
   }
 
   render(){
     return (
       <div>
         <h1>Tasks</h1>
-        <button onClick={this.saveTasks}>Save Progress</button>
-        <button onClick={this.clearAll}>Clear All</button>
-        {/* <button onClick={this.loadData}>getmypastwork</button> */}
+        <Settings
+        saveTasks={this.saveTasks}
+        clearAll={this.clearAll}
+        remainingTasks={this.remainingTasks}
+        clearAllDoneTasks={this.clearAllDoneTasks}
+        />
         <NewTask
           newTask={this.state.newTask}
           handleChange={this.handleChange}
