@@ -8,7 +8,8 @@ export default class App extends Component {
     super(props);
     this.state = {
       newTask: {},
-      allTasks: []
+      allTasks: [],
+      completedTasks: []
     };
   }
 
@@ -18,19 +19,33 @@ export default class App extends Component {
       newTask: {
         ...prevState.newTask,
         [e.target.name]: e.target.value,
-        id: Date.now()
+        id: Date.now(),
+        createdAt: new Date().toDateString(),
+        completed: false
       }
     }));
   }
 
   handleSubmit = (e) => {
+    console.log(e.target)
     e.preventDefault();
-    console.log(this.state.allTasks);
     this.setState((prevState) => ({
       allTasks: [...prevState.allTasks, prevState.newTask],
       newTask: {}
     }));
-    console.log(this.state.allTasks);
+  }
+
+  markAsCompleted = (id) => {
+    const updatedTasks = this.state.allTasks.map(task => {
+      if (task.id === id){
+        return {...task, completed:true};
+      }
+      return task;
+    });
+    this.setState((prevState) => ({
+      ...prevState,
+      allTasks: updatedTasks
+    }))
   }
 
 
@@ -45,6 +60,7 @@ export default class App extends Component {
         />
         <TaskList
           allTasks={this.state.allTasks}
+          markAsCompleted={this.markAsCompleted}
         />
       </div>
     )
