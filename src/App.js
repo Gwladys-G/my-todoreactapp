@@ -1,5 +1,6 @@
 import { Component } from "react";
 import NewTask from "./NewTask"
+import TaskList from "./TaskList"
 
 export default class App extends Component {
 
@@ -38,9 +39,13 @@ export default class App extends Component {
       <div>
         <h1>Tasks</h1>
         <NewTask
-        newTask={this.state.newTask}
-        handleChange={this.handleChange}
-        handleSubmit={this.handleSubmit}/>
+          newTask={this.state.newTask}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+        <TaskList
+          allTasks={this.state.allTasks}
+        />
       </div>
     )
   };
