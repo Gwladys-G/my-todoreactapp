@@ -4,6 +4,9 @@ import TaskList from "./TaskList"
 import Settings from "./Settings";
 import BoredAPI from "./BoredAPI"
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const LOCAL_STORAGE_KEY= 'todoApp.todos'
 
 export default class App extends Component {

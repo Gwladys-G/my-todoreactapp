@@ -1,4 +1,5 @@
-html, body {
+
+/* * html, body {
 	height: 100%;
   background-color: #E9F7CA;
   text-align: center;
@@ -15,9 +16,9 @@ html, body {
 	height: 100%;
 	width: 100%;
 	padding: 8px;
-}
+} */
 
-h1 {
+/* h1 {
   margin: 8px 0;
 }
 
@@ -37,11 +38,11 @@ form button{
   top: 0;
   right: 0;
   padding: 5px;
-}
+} */
 
 
 
-ul {
+/* ul {
   list-style: none;
   text-align: center;
 }
@@ -85,9 +86,9 @@ li h2 {
 
 li p {
   margin: 0px;
-}
+} */
 
-
+/*
 .hide{
   display: none;
-}
+} */

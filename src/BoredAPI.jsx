@@ -2,37 +2,6 @@ import { Component } from "react";
 
 
 export default class BoredAPI extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     error: null,
-  //     isLoaded: false,
-  //     idea: ""
-  //   };
-  // }
-
-  // GetActivity = () => {
-  //   fetch("http://www.boredapi.com/api/activity/")
-  //     .then(res => res.json())
-  //     .then(
-  //       (result) => {
-  //         document.getElementById("APIform").classList.remove("hide")
-  //         this.setState({
-  //           isLoaded: true,
-  //           idea: result.activity
-  //         });
-  //       },
-  //       (error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     )
-  // }
-
-
-
   render(){
     return (
       <div>
