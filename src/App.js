@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import NewTask from "./NewTask"
 import TaskList from "./TaskList"
 import Settings from "./Settings";
@@ -133,6 +133,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Tasks</h1>
+        <h2>{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} Todo</h2>
         <Settings
           saveTasks={this.saveTasks}
           clearAll={this.clearAll}

@@ -8,11 +8,6 @@ import Nav from 'react-bootstrap/Nav';
 
     render (){
       return (
-        // <div>
-        //   <button onClick={this.props.saveTasks}>Save Progress</button>
-        //   <button onClick={this.props.clearAll}>Clear All</button>
-        //   <button onClick={this.props.clearAllDoneTasks}>Clear done tasks</button>
-        // </div>
         <div>
           <Nav variant="pills" activeKey="1" onSelect={this.handleSelect}>
             <Nav.Item>
@@ -31,7 +26,6 @@ import Nav from 'react-bootstrap/Nav';
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          {this.props.remainingTasks()} {this.props.remainingTasks()>1? "tasks are" : "task"} Todo
         </div>
       )
     }
