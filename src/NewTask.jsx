@@ -23,7 +23,7 @@ export default class NewTask extends Component{
             {!this.props.newTask.title? null : (
           <>
             <Form.Control as="textarea" rows={3} name="description"
-              placeholder="New Task description"
+              placeholder="Add details"
               value={this.props.newTask.description || ""}
               onChange={this.props.handleChange}/>
           </>

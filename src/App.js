@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import NewTask from "./NewTask"
-import TaskList from "./TaskList"
 import Settings from "./Settings";
-import BoredAPI from "./BoredAPI"
+import Display from "./Display";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -94,7 +93,6 @@ export default class App extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          document.getElementById("APIform").classList.remove("hide")
           this.setState((prevState) => ({
             ...prevState,
             isLoaded: true,
@@ -124,7 +122,7 @@ export default class App extends Component {
       idea:""
     })
     )
-  document.getElementById("APIform").classList.add("hide")
+  document.getElementById("accordion").click()
 }
 
 
@@ -133,7 +131,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Tasks</h1>
-        <h2>{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} Todo</h2>
+        <h6>{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} left</h6>
         <Settings
           saveTasks={this.saveTasks}
           clearAll={this.clearAll}
@@ -145,17 +143,14 @@ export default class App extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <TaskList
+        <Display
           allTasks={this.state.allTasks}
           markAsCompleted={this.markAsCompleted}
           handleDelete={this.handleDelete}
-        />
-        <BoredAPI
           GetActivity={this.GetActivity}
           activity={this.state.idea}
           AddActivity={this.AddActivity}
-          handleChange={this.handleChange}
-        />
+          handleChange={this.handleChange}/>
       </div>
     )
   };
