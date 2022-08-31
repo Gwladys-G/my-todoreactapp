@@ -1,4 +1,4 @@
-##What is that project
+## What is that project
 A simple task manager built using React
 
 ### Functionalities
