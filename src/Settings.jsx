@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
+
 
 
   export default class Settings extends Component {
@@ -9,20 +11,20 @@ import Nav from 'react-bootstrap/Nav';
     render (){
       return (
         <div>
-          <Nav variant="pills" activeKey="1" onSelect={this.handleSelect} className= "m-2">
+          <Nav variant="pills" activeKey="1" onSelect={this.handleSelect} className= "mt-3 mb-2">
             <Nav.Item>
               <Nav.Link eventKey="Progress has been Saved !" onClick={this.props.saveTasks}>
-                Save Progress
+                <Button variant="outline-success">Save Progress</Button>{' '}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link eventKey="All tasks will been cleared" onClick={this.props.clearAll}>
-                Clear All
+              <Nav.Link className="btn btn-outline-secondary" eventKey="All tasks will been cleared" onClick={this.props.clearAll}>
+                <Button variant="outline-danger">Clear All</Button>{' '}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link eventKey="All done tasks are going to be cleared" onClick={this.props.clearAllDoneTasks}>
-                Clear done tasks
+                <Button variant="outline-warning">Clear done tasks</Button>{' '}
               </Nav.Link>
             </Nav.Item>
           </Nav>

@@ -12,25 +12,25 @@ import Col from 'react-bootstrap/Col';
 export default class Display extends Component {
   render(){
     return (
-      <Container>
-          <Row>
-            <Col>
+      <div className="container">
+          {/* <Row>
+            <Col> */}
             <TaskList
               allTasks={this.props.allTasks}
               markAsCompleted={this.props.markAsCompleted}
               handleDelete={this.props.handleDelete}
             />
-            </Col>
-            <Col>
+            {/* </Col>
+            <Col> */}
               <BoredAPI
                 GetActivity={this.props.GetActivity}
                 activity={this.props.activity}
                 AddActivity={this.props.AddActivity}
                 handleChange={this.props.handleChange}
               />
-            </Col>
-          </Row>
-      </Container>
+            {/* </Col>
+          </Row> */}
+      </div>
     )
   }
 }

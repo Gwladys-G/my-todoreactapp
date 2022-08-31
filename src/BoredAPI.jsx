@@ -8,20 +8,21 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faRotate} from '@fortawesome/free-solid-svg-icons'
 
+
 function CustomToggle({ children, eventKey }) {
   const decoratedOnClick = useAccordionButton(eventKey, () =>
     console.log('totally custom!'),
   );
 
   return (
-    <button
+    <Button
+      variant="dark" size="m"
       type="button"
       id="accordion"
-      style={{ backgroundColor: 'pink' }}
       onClick={decoratedOnClick}
     >
       {children}
-    </button>
+    </Button>
   );
 }
 
@@ -29,9 +30,9 @@ export default class BoredAPI extends Component {
 
   render(){
     return (
-      <Accordion defaultActiveKey="1">
+      <Accordion defaultActiveKey="1"  className="mt-3" >
         <Card>
-          <Card.Header>
+          <Card.Header className="d-grid gap-2">
             <CustomToggle eventKey="0">I'm Bored!</CustomToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">

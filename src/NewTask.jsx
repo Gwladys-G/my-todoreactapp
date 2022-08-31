@@ -14,8 +14,8 @@ export default class NewTask extends Component{
               onChange={this.props.handleChange}/>
             {!this.props.newTask.title? null : (
               <>
-                <Button variant="primary" type="submit">
-                  Add a Task
+                <Button variant="primary" type="submit" className="mb-1 btn-sm ">
+                  Add Task
                 </Button>
               </>
             )}

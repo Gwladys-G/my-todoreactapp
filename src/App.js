@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NewTask from "./NewTask"
 import Settings from "./Settings";
 import Display from "./Display";
+import Container from 'react-bootstrap/Container';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -130,19 +131,21 @@ export default class App extends Component {
   render(){
     return (
       <div>
-        <h1>Tasks</h1>
-        <h6>{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} left</h6>
-        <Settings
-          saveTasks={this.saveTasks}
-          clearAll={this.clearAll}
-          remainingTasks={this.remainingTasks}
-          clearAllDoneTasks={this.clearAllDoneTasks}
-        />
-        <NewTask
-          newTask={this.state.newTask}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        <div className="sticky-top bg-light pb-3 px-2 mb-3">
+          <h1>Tasks</h1>
+          <h6 className="justify-content-end">{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} left</h6>
+          <Settings
+            saveTasks={this.saveTasks}
+            clearAll={this.clearAll}
+            remainingTasks={this.remainingTasks}
+            clearAllDoneTasks={this.clearAllDoneTasks}
+          />
+          <NewTask
+            newTask={this.state.newTask}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+          />
+        </div>
         <Display
           allTasks={this.state.allTasks}
           markAsCompleted={this.markAsCompleted}
