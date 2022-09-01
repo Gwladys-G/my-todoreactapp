@@ -1,7 +1,6 @@
 ## What is that project
-A simple task manager built using React JS
+A simple task manager built using React JS and Boostrap
 
 ### Functionalities
 * local Storage
-* Boostrap
 * Bored API integration
