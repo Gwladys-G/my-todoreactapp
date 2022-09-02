@@ -5,4 +5,4 @@ A simple task manager built using React JS and Boostrap
 * local Storage
 * Bored API integration
 
-https://gwladys-g.github.io/my-todoreactapp/
+ [Check it Out!](https://gwladys-g.github.io/my-todoreactapp/)
