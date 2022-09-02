@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ad5c1204041627a97d3e",
+    "revision": "20313b4676418e94d074",
     "url": "/my-todoreactapp/static/css/main.86f248d8.chunk.css"
   },
   {
-    "revision": "ad5c1204041627a97d3e",
-    "url": "/my-todoreactapp/static/js/main.ad5c1204.chunk.js"
+    "revision": "20313b4676418e94d074",
+    "url": "/my-todoreactapp/static/js/main.20313b46.chunk.js"
   },
   {
     "revision": "d9010b8d86b646b11a6b",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/my-todoreactapp/static/js/runtime~main.866db30d.js"
   },
   {
-    "revision": "8195aac59c8be5f73cdfb46e7e7d1386",
+    "revision": "ca8af992b959ae347ad88a349b7e7f2e",
     "url": "/my-todoreactapp/index.html"
   }
 ];
