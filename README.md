@@ -1,5 +1,5 @@
-##What is that project
-A simple task manager built using React
+## What is that project
+A simple task manager built using React JS and Boostrap
 
 ### Functionalities
 * local Storage
