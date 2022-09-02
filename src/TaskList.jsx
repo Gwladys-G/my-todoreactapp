@@ -10,7 +10,7 @@ export default class TaskList extends Component {
     return(
       <div className="taskslist">
         {this.props.allTasks.map((task) => (
-              <Card className="mt-3">
+              <Card className="mt-3 border border-3 border-dark">
                 <Card.Header className="cardheader" style={{backgroundColor: task.completed ? 'darkgray' : 'white'}}>
                   <FontAwesomeIcon className="trash"icon={faTrash} onClick={()=>this.props.handleDelete(task.id)}></FontAwesomeIcon>
                   <p className="mb-0" style={{textAlign: 'end', fontSize: 'smaller',fontStyle: 'italic',textDecoration: task.completed ? 'line-through' : 'none'}}>{task.createdAt}</p>

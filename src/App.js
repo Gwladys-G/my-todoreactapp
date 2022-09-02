@@ -129,7 +129,7 @@ export default class App extends Component {
   render(){
     return (
       <div>
-        <div className="sticky-top bg-light rounded px-5 py-3">
+        <div className="sticky-top bg-light rounded px-5 py-3 mx-3" id="top">
           <h1 className="m-2">Tasks</h1>
           <h6 className="justify-content-end">{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} left</h6>
           <Settings

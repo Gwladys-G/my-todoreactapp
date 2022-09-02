@@ -1,13 +1,14 @@
 body {
-  background-color: #E9F7CA;
+  background-color: #d9d3be !important;
   text-align: center;
   padding: 10px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-* {
-	font-family: Helvetica, Arial, sans-serif;
-  /* box-sizing: border-box; */
+#top {
+  box-shadow: inset 5px 5px 7px #e3dddd, inset -5px -5px 7px #f0e8e8;
 }
+
 
 
 .trash{
