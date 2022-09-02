@@ -1,15 +1,15 @@
 {
-  "main.css": "/my-todoreactapp/static/css/main.ae2c3e1c.chunk.css",
-  "main.js": "/my-todoreactapp/static/js/main.8686fbdf.chunk.js",
-  "main.js.map": "/my-todoreactapp/static/js/main.8686fbdf.chunk.js.map",
+  "main.css": "/my-todoreactapp/static/css/main.ada7cd88.chunk.css",
+  "main.js": "/my-todoreactapp/static/js/main.5b545a5b.chunk.js",
+  "main.js.map": "/my-todoreactapp/static/js/main.5b545a5b.chunk.js.map",
   "static/css/1.82b141db.chunk.css": "/my-todoreactapp/static/css/1.82b141db.chunk.css",
   "static/js/1.62189c27.chunk.js": "/my-todoreactapp/static/js/1.62189c27.chunk.js",
   "static/js/1.62189c27.chunk.js.map": "/my-todoreactapp/static/js/1.62189c27.chunk.js.map",
   "runtime~main.js": "/my-todoreactapp/static/js/runtime~main.866db30d.js",
   "runtime~main.js.map": "/my-todoreactapp/static/js/runtime~main.866db30d.js.map",
+  "static/css/main.ada7cd88.chunk.css.map": "/my-todoreactapp/static/css/main.ada7cd88.chunk.css.map",
   "static/css/1.82b141db.chunk.css.map": "/my-todoreactapp/static/css/1.82b141db.chunk.css.map",
-  "static/css/main.ae2c3e1c.chunk.css.map": "/my-todoreactapp/static/css/main.ae2c3e1c.chunk.css.map",
   "index.html": "/my-todoreactapp/index.html",
-  "precache-manifest.f338e114962e6b02723072217898cc51.js": "/my-todoreactapp/precache-manifest.f338e114962e6b02723072217898cc51.js",
+  "precache-manifest.889399ae52f7a4f4ba67431aa10752e8.js": "/my-todoreactapp/precache-manifest.889399ae52f7a4f4ba67431aa10752e8.js",
   "service-worker.js": "/my-todoreactapp/service-worker.js"
 }

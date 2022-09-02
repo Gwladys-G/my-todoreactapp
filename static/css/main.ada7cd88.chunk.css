@@ -1,0 +1,2 @@
+body{background-color:#d9d3be!important;text-align:center;padding:10px;font-family:Helvetica,Arial,sans-serif}#top{box-shadow:inset 5px 5px 7px #e3dddd,inset -5px -5px 7px #f0e8e8}.trash{font-size:small}.trash:hover{font-size:medium;cursor:pointer}.taskslist{display:grid;grid-template-columns:1fr 1fr 1fr;grid-gap:10px}@media(max-width:992px){.taskslist{grid-template-columns:1fr 1fr}}@media(max-width:768px){.taskslist{grid-template-columns:1fr}}.container{display:grid;grid-template-columns:70% 30%;grid-gap:20px}
+/*# sourceMappingURL=main.ada7cd88.chunk.css.map */
