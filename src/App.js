@@ -90,7 +90,7 @@ export default class App extends Component {
   }
 
   GetActivity = () => {
-    fetch("http://www.boredapi.com/api/activity/")
+    fetch("https://www.boredapi.com/api/activity/")
       .then(res => res.json())
       .then(
         (result) => {
