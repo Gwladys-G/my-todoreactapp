@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import NewTask from "./NewTask"
 import Settings from "./Settings";
 import Display from "./Display";
-import Container from 'react-bootstrap/Container';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -90,7 +88,7 @@ export default class App extends Component {
   }
 
   GetActivity = () => {
-    fetch("https://www.boredapi.com/api/activity/")
+    fetch("http://www.boredapi.com/api/activity/")
       .then(res => res.json())
       .then(
         (result) => {
@@ -131,8 +129,8 @@ export default class App extends Component {
   render(){
     return (
       <div>
-        <div className="sticky-top bg-light pb-3 px-2 mb-3">
-          <h1>Tasks</h1>
+        <div className="sticky-top bg-light rounded px-5 py-3">
+          <h1 className="m-2">Tasks</h1>
           <h6 className="justify-content-end">{this.remainingTasks()} {this.remainingTasks()>1? "tasks are" : "task"} left</h6>
           <Settings
             saveTasks={this.saveTasks}

@@ -10,9 +10,7 @@ import {faRotate} from '@fortawesome/free-solid-svg-icons'
 
 
 function CustomToggle({ children, eventKey }) {
-  const decoratedOnClick = useAccordionButton(eventKey, () =>
-    console.log('totally custom!'),
-  );
+  const decoratedOnClick = useAccordionButton(eventKey);
 
   return (
     <Button
