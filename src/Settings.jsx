@@ -19,7 +19,7 @@ import Button from 'react-bootstrap/Button';
             </Nav.Item>
             <Nav.Item>
               <Nav.Link className="btn btn-outline-secondary" eventKey="All tasks will been cleared" onClick={this.props.clearAll}>
-                <Button variant="outline-danger">Clear All</Button>{' '}
+                <Button variant="outline-danger">Clear All Tasks</Button>{' '}
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
